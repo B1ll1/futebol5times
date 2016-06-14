@@ -9,6 +9,11 @@
 @section('content')
 <div class="container">
     <div class="row">
+        @foreach($equipes as $equipe)
+            <a href="{{route('index',[$equipe->id])}}"><img src="http://futebol.trabalho/images/{{strtolower($equipe->nome)}}.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        @endforeach
+    </div>
+    <div class="row">
         <div class="col-md-7">
             <div class="panel panel-default">
                 <div class="panel-heading" style="background-color: green; color: black;"><b>Tabela</b></div>
@@ -28,8 +33,8 @@
                         </thead>
                         <tbody>
                             @foreach($classificacao_ordenada as $key=>$obj)
-                             <tr>
-                                <td style="height: 44px;">{{$key+1}} <a href="{{route('index',[$key+1])}}">{{$obj['nome']}}</a></td>
+                                 <tr>
+                                <td style="height: 44px;">{{$key+1}} {{$obj['nome']}}</a></td>
                                 <td>{{$obj['pontos']}}</td>
                                 <td>{{$obj['jogos']}}</td>
                                 <td>{{$obj['vitorias']}}</td>

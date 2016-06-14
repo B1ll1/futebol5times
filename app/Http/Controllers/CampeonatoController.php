@@ -171,7 +171,8 @@ class CampeonatoController extends Controller
             return view('time')->with(compact('classificacao', 'rodadas', 'classificacao_ordenada', 'golsporjogo', 'id', 'ultimosjogos', 'proximosjogos', 'jogadores', 'gols', 'cartoes', 'jogos'));
         }
         else{
-            return view('campeonato')->with(compact('classificacao', 'rodadas', 'classificacao_ordenada', 'golsporjogo', 'gols', 'jogadores', 'jogos', 'campos'));
+            $equipes = Equipe::all();
+            return view('campeonato')->with(compact('classificacao', 'rodadas', 'classificacao_ordenada', 'golsporjogo', 'gols', 'jogadores', 'jogos', 'campos', 'equipes'));
         }
 
     }
