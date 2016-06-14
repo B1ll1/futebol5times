@@ -14,27 +14,27 @@ class JogosTableSeeder extends Seeder
     {
         $jogos =array(
             //IDA
-            array('campo_id' => 1, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-12 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 2, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-12 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 1, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-19 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 2, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-19 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 1, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-26 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 4, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-26 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 1, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-03 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 3, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-03 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 3, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-10 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 2, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-10 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-01 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-01 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-08 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-08 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-15 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-15 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-22 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-22 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-29 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-29 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             //VOLTA
-            array('campo_id' => 3, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-17 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 4, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-17 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 5, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-24 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 3, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-24 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 2, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-31 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 5, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-31 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 4, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-07 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 5, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-07 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 4, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-14 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 5, 'hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-06-14 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString())
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-07-06 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-07-06 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-07-13 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-07-13 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-07-20 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-07-20 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-07-27 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-07-27 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-08-03 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('hora_inicio' => '16:00:00', 'hora_fim' => '18:00:00', 'data' => '2016-08-03 16:00:00', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString())
         );
         Jogo::insert($jogos);
     }

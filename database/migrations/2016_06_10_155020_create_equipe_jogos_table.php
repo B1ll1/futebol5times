@@ -14,6 +14,7 @@ class CreateEquipeJogosTable extends Migration
     {
         Schema::create('equipe_jogos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('campo_id');
             $table->integer('equipe_id_casa')->unsigned()->index();
             $table->foreign('equipe_id_casa')
                  ->references('id')->on('equipes');

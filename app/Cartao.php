@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sumula extends Model
+class Cartao extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,18 +12,16 @@ class Sumula extends Model
      * @var array
      */
     protected $fillable = [
-        'equipe_id_casa', 'equipe_id_visitante', 'jogo_id', 'campo_id'
+        'sumula_id', 'jogador_id', 'instante', 'tipo'
     ];
-
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'equipe_jogos';
+    protected $table = 'cartoes';
 
-    public function gols(){
-        return $this->hasMany('App\Gol');
+    public function jogador(){
+        return $this->belongsTo('App\Jogador');
     }
-
 }
