@@ -130,15 +130,14 @@
                      }
                      var tamanhosubs = data.subs.length;
                      if(tamanhosubs>auxsubs){
-                            // console.log(data.subs[auxsubs].jogador_id_sai-1);
                             $('#timelinesubs').append(`<p> Sai o jogador ${data.jogadores[data.subs[auxsubs].jogador_id_sai-1].nome} e entra o jogador  ${data.jogadores[data.subs[auxsubs].jogador_id_entra-1].nome} - ${data.subs[auxsubs].instante}</p>`);
                             $('#jog'+data.jogadores[data.subs[auxsubs].jogador_id_sai-1].id).empty();
                             $('#jog'+data.jogadores[data.subs[auxsubs].jogador_id_sai-1].id).text(data.jogadores[data.subs[auxsubs].jogador_id_entra-1].nome);
-                            // console.log(data.jogadores[data.subs[auxsubs].jogador_id_sai-1].id);
                             auxsubs+=1;
-                            // $('#jog'+data.jogadores[data.subs[auxsubs-1].jogador_id_sai].id).attr('id')='jog'+data.jogadores[data.subs[auxsubs-1].jogador_id_entra-1].id;
                      }
                      $('#jog'+data.jogadores[data.subs[auxsubs-1].jogador_id_sai-1].id).attr('id', 'jog'+data.jogadores[data.subs[auxsubs-1].jogador_id_entra-1].id);
+                     $('#jogador'+data.jogadores[data.subs[auxsubs-1].jogador_id_sai-1].id).empty();
+                     $('#jogador'+data.jogadores[data.subs[auxsubs-1].jogador_id_sai-1].id).attr('id', 'jogador'+data.jogadores[data.subs[auxsubs-1].jogador_id_entra-1].id);
                 }
             });
         }, 3000);
