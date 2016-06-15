@@ -15,7 +15,6 @@
 Route::get('/datarodada',['as' => 'data_rodada', 'uses'=>'CampeonatoController@rodadaData']);
 Route::get('{id?}', ['as' => 'index', 'uses' => 'CampeonatoController@index']);
 
-
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
@@ -30,4 +29,8 @@ Route::group(['prefix' => 'tempo-real/'], function() {
     Route::post('partida/{sumula_id}/cartao', ['as' => 'real_time.postCartao', 'uses' => 'RealTimeController@postCartao']);
     Route::post('partida/{sumula_id}/escalacao', ['as' => 'real_time.postEscalacao', 'uses' => 'RealTimeController@postEscalacao']);
     Route::post('partida/{sumula_id}/substituicao', ['as' => 'real_time.postSubstituicao', 'uses' => 'RealTimeController@postSubstituicao']);
+});
+
+Route::group(['prefix' => 'acompanhamento/'], function() {
+    Route::get('selecaojogo',['as' => 'selecaojogo', 'uses' => 'RTviewController@selecaojogo']);
 });

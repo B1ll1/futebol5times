@@ -88,7 +88,7 @@
                             <tr>
                                 <th>
                                     <div class="col-md-3">
-                                        <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png">
+                                        <img src="http://futebol.trabalho/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png">
                                     </div>
                                     <div class="col-md-5">
                                         {{$jogadores[$key]->nome}}
