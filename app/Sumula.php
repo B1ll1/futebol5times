@@ -26,4 +26,19 @@ class Sumula extends Model
         return $this->hasMany('App\Gol');
     }
 
+    public function equipeCasa()
+    {
+        return $this->hasOne(Equipe::class, 'id', 'equipe_id_casa');
+    }
+
+    public function equipeVisitante()
+    {
+        return $this->hasOne(Equipe::class, 'id', 'equipe_id_visitante');
+    }
+
+    public function jogo()
+    {
+        return $this->hasOne(Jogo::class);
+    }
+
 }

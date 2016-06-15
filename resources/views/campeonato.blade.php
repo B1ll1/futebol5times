@@ -54,7 +54,16 @@
                         <tbody>
                             @foreach($rodadas as $rodada)
                              <tr>
-                                <th style="text-align: center;">{{$classificacao[$rodada->casaid]['nome']}} <a href="{{route('time',[$rodada->casaid])}}"><img src="http://futebol.trabalho/images/{{strtolower($classificacao[$rodada->casaid]['nome'])}}.png"></a> {{$golsporjogo[$rodada->id][$rodada->casaid]}} X {{$golsporjogo[$rodada->id][$rodada->visitanteid]}} <a href="{{route('time',[$rodada->visitanteid])}}"><img src="http://futebol.trabalho/images/{{strtolower($classificacao[$rodada->visitanteid]['nome'])}}.png"></a> {{$classificacao[$rodada->visitanteid]['nome']}}</th>
+                                <th style="text-align: center;">
+                                    {{$classificacao[$rodada->casaid]['nome']}}
+                                    <a href="{{route('time',[$rodada->casaid])}}">
+                                        <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$rodada->casaid]['nome'])}}.png">
+                                    </a>
+                                    {{$golsporjogo[$rodada->id][$rodada->casaid]}} X {{$golsporjogo[$rodada->id][$rodada->visitanteid]}}
+                                    <a href="{{route('time',[$rodada->visitanteid])}}">
+                                        <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$rodada->visitanteid]['nome'])}}.png">
+                                    </a> {{$classificacao[$rodada->visitanteid]['nome']}}
+                                </th>
                              </tr>
                          @endforeach
 
@@ -80,9 +89,20 @@
                         <thead>
                             @foreach($gols as $key => $gol)
                             <tr>
-                                <th>{{$jogadores[$key]->nome}} <img src="http://futebol.trabalho/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png"> {{$gol}}</th>
+                                <th>
+                                    <div class="col-md-3">
+                                        <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png">
+                                    </div>
+                                    <div class="col-md-5">
+                                        {{$jogadores[$key]->nome}}
+                                    </div>
+                                    <div class="col-md-2">
+                                        {{$gol}}
+                                    </div>
+                                </th>
+
                             </tr>
-                           @endforeach()
+                           @endforeach
                         </thead>
                         <tbody>
                              <tr>
