@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 @foreach($classificacao_ordenada as $key=>$obj)
                 @unless($classificacao[$id]['nome']!=$obj['nome'])
-                <div class="panel-heading" style="background-color: #707070 ; color: black;"><h4>{{$obj['nome']}}  <img src="http://dev.futebol.com/images/{{strtolower($obj['nome'])}}.png"></h4></div>
+                <div class="panel-heading" style="background-color: #707070 ; color: black;"><h4>{{$obj['nome']}}  <img src="http://futebol.trabalho/images/{{strtolower($obj['nome'])}}.png"></h4></div>
                 @endunless
                 @endforeach
                 <div class="panel-body">

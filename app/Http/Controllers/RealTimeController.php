@@ -13,6 +13,7 @@ use App\Cartao;
 use App\Escalacao;
 use App\Substituicao;
 use Carbon\Carbon;
+use App\Posicao;
 
 class RealTimeController extends Controller
 {
@@ -136,13 +137,42 @@ class RealTimeController extends Controller
                 array_push($reservasCasa, $jogador);
             }
             else {
-                Escalacao::create([
+                $escalacao = Escalacao::create([
                     'sumula_id' => $sumulaId,
                     'jogador_id' => $jogador->id,
                     'equipe_id' => $jogador->equipe->id
                 ]);
+                if($key<1){
+                    Posicao::create([
+                        'escalacao_id' => $escalacao->id,
+                        'jogador_id' => $jogador->id,
+                        'nome' => 'Goleiro'
+                    ]);
+                }
+                else if($key>=1 && $key<=4){
+                    Posicao::create([
+                        'escalacao_id' => $escalacao->id,
+                        'jogador_id' => $jogador->id,
+                        'nome' => 'Defesa'
+                    ]);
+                }
+                else if($key>=5 && $key<=8){
+                    Posicao::create([
+                        'escalacao_id' => $escalacao->id,
+                        'jogador_id' => $jogador->id,
+                        'nome' => 'Meio Campo'
+                    ]);
+                }
+                else if($key>=9 && $key<=10){
+                    Posicao::create([
+                        'escalacao_id' => $escalacao->id,
+                        'jogador_id' => $jogador->id,
+                        'nome' => 'Atacante'
+                    ]);
+                }
             }
         }
+
         $jogadoresCasa = Escalacao::join('jogadores', 'jogadores.id', '=', 'escalacao.jogador_id')
             ->where('escalacao.equipe_id', $casa->jogadores()->first()->equipe->id)
             ->select('jogadores.*')->get();
@@ -152,11 +182,39 @@ class RealTimeController extends Controller
                 array_push($reservasVisitante, $jogador);
             }
             else {
-                Escalacao::create([
+                $escalacao = Escalacao::create([
                     'sumula_id' => $sumulaId,
                     'jogador_id' => $jogador->id,
                     'equipe_id' => $jogador->equipe->id
                 ]);
+                if($key<1){
+                    Posicao::create([
+                        'escalacao_id' => $escalacao->id,
+                        'jogador_id' => $jogador->id,
+                        'nome' => 'Goleiro'
+                    ]);
+                }
+                else if($key>=1 && $key<=4){
+                    Posicao::create([
+                        'escalacao_id' => $escalacao->id,
+                        'jogador_id' => $jogador->id,
+                        'nome' => 'Defesa'
+                    ]);
+                }
+                else if($key>=5 && $key<=8){
+                    Posicao::create([
+                        'escalacao_id' => $escalacao->id,
+                        'jogador_id' => $jogador->id,
+                        'nome' => 'Meio Campo'
+                    ]);
+                }
+                else if($key>=9 && $key<=10){
+                    Posicao::create([
+                        'escalacao_id' => $escalacao->id,
+                        'jogador_id' => $jogador->id,
+                        'nome' => 'Atacante'
+                    ]);
+                }
             }
         }
         $jogadoresVisitante = Escalacao::join('jogadores', 'jogadores.id', '=', 'escalacao.jogador_id')

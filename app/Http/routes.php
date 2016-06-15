@@ -33,5 +33,5 @@ Route::group(['prefix' => 'tempo-real/'], function() {
 });
 
 Route::group(['prefix' => 'acompanhamento/'], function() {
-    Route::get('selecaojogo',['as' => 'selecaojogo', 'uses' => 'RTviewController@selecaojogo']);
+    Route::get('golslive',['as' => 'golslive', 'uses' => 'RTviewController@gols']);
 });
