@@ -12,7 +12,7 @@ class Sumula extends Model
      * @var array
      */
     protected $fillable = [
-        'equipe_id_casa', 'equipe_id_visitante', 'jogo_id'
+        'equipe_id_casa', 'equipe_id_visitante', 'jogo_id', 'campo_id'
     ];
 
     /**

@@ -12,7 +12,11 @@ class Jogo extends Model
      * @var array
      */
     protected $fillable = [
-        'campo_id', 'hora_inicio', 'hora_fim', 'data'
+        'hora_inicio', 'hora_fim', 'data'
+    ];
+
+    protected $dates = [
+        'data'
     ];
 
 

@@ -29,4 +29,8 @@ class Jogador extends Model
     public function gols(){
         return $this->hasMany('App\Gol');
     }
+
+    public function cartoes(){
+        return $this->hasMany('App\Cartao');
+    }
 }

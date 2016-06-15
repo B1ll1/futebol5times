@@ -13,7 +13,7 @@
 
 // Route::get('', 'CampeonatoController@index');
 Route::get('/datarodada',['as' => 'data_rodada', 'uses'=>'CampeonatoController@rodadaData']);
-Route::get('{id?}', ['as' => 'time', 'uses' => 'CampeonatoController@index']);
+Route::get('{id?}', ['as' => 'index', 'uses' => 'CampeonatoController@index']);
 
 
 Route::auth();
