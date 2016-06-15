@@ -114,6 +114,7 @@
                      $("#casa").text(data.golstime[casaid]);
                      $("#visitante").text(data.golstime[visitanteid]);
                      var golsjogador = data.golsjogador;
+                     var golsaux = data.gols;
                      for (gols in golsjogador ){
                         $("#jogador"+golsjogador[gols].jogador_id).text(golsjogador[gols].total);
                      }
@@ -123,9 +124,9 @@
                             $('#timelinecartoes').append(`<p>${data.cartoes[auxcartoes].nome} - ${data.cartoes[auxcartoes].instante} - ${data.cartoes[auxcartoes].tipo} </p>`);
                             auxcartoes+=1;
                      }
-                     var tamanhogols = golsjogador.length;
+                     var tamanhogols = golsaux.length;
                      if(tamanhogols>auxgols){
-                            $('#timelinegols').append(`<p> GOL  do ${data.golsjogador[auxgols].nome} - ${data.golsjogador[auxgols].instante}</p>`);
+                            $('#timelinegols').append(`<p> GOL  do ${golsaux[auxgols].nome} - ${golsaux[auxgols].instante}</p>`);
                             auxgols+=1;
                      }
                      var tamanhosubs = data.subs.length;

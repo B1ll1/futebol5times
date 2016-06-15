@@ -25,7 +25,8 @@ class RTviewController extends Controller
         $cartoes = Cartao::where('sumula_id', '=', $sumulaid)->join('jogadores', 'cartoes.jogador_id', '=', 'jogadores.id')->select('cartoes.jogador_id', 'cartoes.instante', 'cartoes.tipo', 'jogadores.nome')->get();
         $subs = Substituicao::where('sumula_id', '=', $sumulaid)->select(['jogador_id_sai', 'jogador_id_entra', 'instante'])->get();
         $jogadores = Jogador::all();
-        return response()->json(['status' => 'success', 'golstime' => $golstime, 'golsjogador' => $golsjogador, 'cartoes' => $cartoes, 'subs' => $subs, 'jogadores' => $jogadores]);
+        $gols = Gol::where('sumula_id', '=', $sumulaid)->join('jogadores', 'gols.jogador_id', '=', 'jogadores.id')->select(['jogador_id', 'instante', 'jogadores.nome'])->get();
+        return response()->json(['status' => 'success', 'golstime' => $golstime, 'golsjogador' => $golsjogador, 'cartoes' => $cartoes, 'subs' => $subs, 'jogadores' => $jogadores, 'gols' => $gols]);
     }
 
     /**

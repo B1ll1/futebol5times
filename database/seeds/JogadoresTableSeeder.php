@@ -13,7 +13,7 @@ class JogadoresTableSeeder extends Seeder
     public function run()
     {
         $jogadores =array(
-            //Internacional
+
             array('nome' => 'Tomás Lima', 'equipe_id' => 1, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Kauã Azevedo', 'equipe_id' => 1, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Felipe Martins', 'equipe_id' => 1, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
@@ -30,7 +30,7 @@ class JogadoresTableSeeder extends Seeder
             array('nome' => 'Antônio Fernandes', 'equipe_id' => 1, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Luan Alves', 'equipe_id' => 1, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Bruno Pinto', 'equipe_id' => 1, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-        //America-MG
+
             array('nome' => 'Ryan Cardoso', 'equipe_id' => 2, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Breno Barbosa', 'equipe_id' => 2, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Douglas Azevedo', 'equipe_id' => 2, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
@@ -47,7 +47,7 @@ class JogadoresTableSeeder extends Seeder
             array('nome' => 'Victor Melo', 'equipe_id' => 2, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Enzo Araujo', 'equipe_id' => 2, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Tomás Barbosa', 'equipe_id' => 2, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-        //Cruzeiro
+
             array('nome' => 'Estevan Dias', 'equipe_id' => 3, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Leonardo Sousa', 'equipe_id' => 3, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Leonardo Barros', 'equipe_id' => 3, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
@@ -64,7 +64,7 @@ class JogadoresTableSeeder extends Seeder
             array('nome' => 'Vitor Rodrigues', 'equipe_id' => 3, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Diogo Barbosa', 'equipe_id' => 3, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Thiago Goncalves', 'equipe_id' => 3, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-         //Atletico-PR
+
             array('nome' => 'Tomás Martins', 'equipe_id' => 4, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Matheus Almeida', 'equipe_id' => 4, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Júlio Gomes', 'equipe_id' => 4, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
@@ -81,7 +81,7 @@ class JogadoresTableSeeder extends Seeder
             array('nome' => 'Diogo Rodrigues', 'equipe_id' => 4, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Thiago Fernandes', 'equipe_id' => 4, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'João Silva', 'equipe_id' => 4, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-        //Sao Paulo
+
             array('nome' => 'Luis Goncalves', 'equipe_id' => 5, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Davi Rocha', 'equipe_id' => 5, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Rodrigo Silva', 'equipe_id' => 5, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
@@ -97,7 +97,24 @@ class JogadoresTableSeeder extends Seeder
             array('nome' => 'André Rodrigues', 'equipe_id' => 5, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Arthur Silva', 'equipe_id' => 5, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('nome' => 'Marcos Santos', 'equipe_id' => 5, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('nome' => 'Bruno Correia', 'equipe_id' => 5, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString())
+            array('nome' => 'Bruno Correia', 'equipe_id' => 5, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+
+            // array('nome' => 'Leonardo Correia', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Joao Melo', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Diogo Almeida', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Ryan Cardoso', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Miguel Correia', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Alex Fernandes', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Fábio Fernandes', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Gabriel Gomes', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Martim Goncalves', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Vitor Ribeiro', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Luiz Souza', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Danilo Alves', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Otávio Alves', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Miguel Dias', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Martim Rocha', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            // array('nome' => 'Enzo Barbosa', 'equipe_id' => 6, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString())
         );
         Jogador::insert($jogadores);
     }
