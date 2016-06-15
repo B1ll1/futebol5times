@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['prefix' => 'tempo-real/'], function() {
     Route::get('dashboard', ['as' => 'real_time.dashboard', 'uses' => 'RealTimeController@dashboard']);
+    Route::get('partidas', ['as' => 'real_time.index', 'uses' => 'RealTimeController@index']);
     Route::get('partida/{sumula_id}', ['as' => 'real_time.getJogo', 'uses' => 'RealTimeController@getJogo']);
     Route::get('partida/{sumula_id}/ao-vivo', ['as' => 'real_time.live', 'uses' => 'RealTimeController@live']);
     Route::get('partida/{sumula_id}/encerrar', ['as' => 'real_time.finishGame', 'uses' => 'RealTimeController@finishGame']);
