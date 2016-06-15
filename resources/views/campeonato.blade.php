@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-7">
             <div class="panel panel-default">
-                <div class="panel-heading" style="background-color: green; color: black;"><b>Tabela</b></div>
+                <div class="panel-heading" style="background-color: green; color: white; font-size: 1.5em;"><b>Tabela</b></div>
                      <table class="table table-hover" id="classificacao" >
                         <thead>
                             <tr>
@@ -54,7 +54,7 @@
             <table id="rodada" class="table table-hover display" cellspacing="0" width="100%">
                      <thead>
                             <tr>
-                                <th style="text-align: center; background-color: green; color: black;"><b>Rodadas</b></th>
+                                <th style="text-align: center; background-color: green; color: white; font-size: 1.5em;"><b>Rodadas</b></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -81,17 +81,17 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading" style="background-color: green; color: black;"><b>Artilharia</b></div>
+                <div class="panel-heading" style="background-color: green; color: white; font-size: 1.5em;"><b>Artilharia</b></div>
                      <table class="table table-hover" id="artilharia">
                         <thead>
                             @foreach($gols as $key => $gol)
                             <tr>
                                 <th>
                                     <div class="col-md-3">
-                                        <img src="http://futebol.trabalho/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png">
+                                        <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png">
                                     </div>
                                     <div class="col-md-5">
-                                        {{$jogadores[$key]->nome}}
+                                        {{$jogadores[$key-1]->nome}}
                                     </div>
                                     <div class="col-md-2">
                                         {{$gol}}

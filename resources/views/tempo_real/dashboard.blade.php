@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"></div>
+                    <div class="panel-heading" style="background: green; color: white; font-size: 1.5em;">Qual partida deseja narrar?</div>
                     <div class="panel-body">
                         <div class="col-md-10">
                             <select id="sumulaSelect" class="form-control" name="sumulaSelect">
@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading text-center">
+                <div class="panel-heading text-center" style="background: green; color:white; font-size: 1.5em;">
                     <span id="spanTime1"></span>
                 </div>
                 <div id="panelTime1" class="panel-body">
@@ -49,10 +49,13 @@
                         {{-- Tab Gols --}}
                         <div id="tabGol1" class="tab-pane fade in active"><br>
                             {!! Form::open(['id' => 'formGol1', 'class' => 'form-horizontal']) !!}
-                                <div class="col-md-9">
+                                <div class="col-md-6">
                                     <select id="selectTime1Jogadores" class="form-control selectJogadores" name="jogador_id">
                                         <option value=""></option>
                                     </select>
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
                                 </div>
                                 <div class="col-md-3">
                                     <button id="btnSalvaGol1" type="submit" class="btn btn-sm btn-success">Registrar</button>
@@ -62,10 +65,13 @@
 
                       <div id="tabAmarelo1" class="tab-pane fade">
                             {!! Form::open(['id' => 'formAmarelo1', 'class' => 'form-horizontal']) !!}
-                                <div class="col-md-9">
+                                <div class="col-md-6">
                                     <select id="selectTime1JogadoresAmarelo" class="form-control selectJogadores" name="jogador_id" style="width: 100%">
                                         <option value=""></option>
                                     </select>
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
                                 </div>
                                 <div class="col-md-3">
                                     <button id="btnSalvaAmarelo1" type="submit" class="btn btn-sm btn-success">Registrar</button>
@@ -75,10 +81,13 @@
 
                       <div id="tabVermelho1" class="tab-pane fade">
                             {!! Form::open(['id' => 'formVermelho1', 'class' => 'form-horizontal']) !!}
-                                <div class="col-md-9">
+                                <div class="col-md-6">
                                     <select id="selectTime1JogadoresVermelho" class="form-control selectJogadores" name="jogador_id" style="width: 100%">
                                         <option value=""></option>
                                     </select>
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
                                 </div>
                                 <div class="col-md-3">
                                     <button id="btnSalvaVermelho1" type="submit" class="btn btn-sm btn-success">Registrar</button>
@@ -103,7 +112,10 @@
                                 </div><br>
 
                                 <div class="row">
-                                    <div class="col-md-5 col-md-offset-5">
+                                    <div class="col-md-3">
+                                        {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
+                                    </div>
+                                    <div class="col-md-2">
                                         <button id="btnSalvaSubstituicao1" type="submit" class="btn btn-sm btn-success">Registrar</button>
                                     </div>
                                 </div>
@@ -116,7 +128,7 @@
 
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading text-center">
+                <div class="panel-heading text-center" style="background: green; color:white; font-size: 1.5em;">
                     <span id="spanTime2"></span>
                 </div>
                 <div id="panelTime2" class="panel-body">
@@ -132,11 +144,14 @@
                       {{-- Tab Gols --}}
                       <div id="tabGol2" class="tab-pane fade in active"><br>
                             {!! Form::open(['id' => 'formGol2', 'class' => 'form-horizontal']) !!}
-                            <div class="col-md-9">
+                            <div class="col-md-6">
                                 <select id="selectTime2Jogadores" class="form-control selectJogadores" name="jogador_id">
                                     <option value=""></option>
                                 </select>
                             </div>
+                            <div class="col-md-3">
+                                    {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
+                                </div>
                             <div class="col-md-3">
                                 <button id="btnSalvaGol2" type="submit" class="btn btn-sm btn-success">Registrar</button>
                             </div>
@@ -145,10 +160,13 @@
 
                       <div id="tabAmarelo2" class="tab-pane fade">
                             {!! Form::open(['id' => 'formAmarelo2', 'class' => 'form-horizontal']) !!}
-                                <div class="col-md-9">
+                                <div class="col-md-6">
                                     <select id="selectTime2JogadoresAmarelo" class="form-control selectJogadores" name="jogador_id" style="width: 100%">
                                         <option value=""></option>
                                     </select>
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
                                 </div>
                                 <div class="col-md-3">
                                     <button id="btnSalvaAmarelo2" type="submit" class="btn btn-sm btn-success">Registrar</button>
@@ -158,10 +176,13 @@
 
                       <div id="tabVermelho2" class="tab-pane fade">
                             {!! Form::open(['id' => 'formVermelho2', 'class' => 'form-horizontal']) !!}
-                                <div class="col-md-9">
+                                <div class="col-md-6">
                                     <select id="selectTime2JogadoresVermelho" class="form-control selectJogadores" name="jogador_id" style="width: 100%">
                                         <option value=""></option>
                                     </select>
+                                </div>
+                                <div class="col-md-3">
+                                    {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
                                 </div>
                                 <div class="col-md-3">
                                     <button id="btnSalvaVermelho2" type="submit" class="btn btn-sm btn-success">Registrar</button>
@@ -186,7 +207,10 @@
                                 </div><br>
 
                                 <div class="row">
-                                    <div class="col-md-5 col-md-offset-5">
+                                    <div class="col-md-3">
+                                        {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
+                                    </div>
+                                    <div class="col-md-5">
                                         <button id="btnSalvaSubstituicao2" type="submit" class="btn btn-sm btn-success">Registrar</button>
                                     </div>
                                 </div>
@@ -236,6 +260,13 @@
             $('#btnSalvaVermelho2').prop('disabled', false);
         });
 
+        $('#selectTime1Atual').on('change', function() {
+            $('#btnSalvaSubstituicao1').prop('disabled', false);
+        });
+        $('#selectTime2Atual').on('change', function() {
+            $('#btnSalvaSubstituicao2').prop('disabled', false);
+        });
+
         $('#btnIniciarPartida').prop('disabled', true); // Desativa o botão iniciar partida
         $('#btnSalvaGol1').prop('disabled', true);
         $('#btnSalvaGol2').prop('disabled', true);
@@ -243,6 +274,8 @@
         $('#btnSalvaAmarelo2').prop('disabled', true);
         $('#btnSalvaVermelho1').prop('disabled', true);
         $('#btnSalvaVermelho2').prop('disabled', true);
+        $('#btnSalvaSubstituicao1').prop('disabled', true);
+        $('#btnSalvaSubstituicao2').prop('disabled', true);
     });
 
     // Função para pegar os dados da sumula escolhida no select
@@ -509,7 +542,7 @@
         })
         .done(function(data) {
             if(data.status == 'success') {
-                //$('#btnSalvaVermelho1').prop('disabled', true);
+                $('#btnSalvaSubstituicao1').prop('disabled', true);
             }
         });
     });
@@ -530,11 +563,10 @@
         })
         .done(function(data) {
             if(data.status == 'success') {
-                //$('#btnSalvaVermelho1').prop('disabled', true);
+                $('#btnSalvaSubstituicao2').prop('disabled', true);
             }
         });
     });
     // ****************** Fim do Submit dos Formulários de Substituição ********************
-
 </script>
 @stop

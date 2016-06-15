@@ -23,7 +23,7 @@ class CreateSubstituicaoTable extends Migration
              $table->integer('jogador_id_entra')->unsigned()->index();
             $table->foreign('jogador_id_entra')
                  ->references('id')->on('jogadores');
-            $table->timestamp('instante');
+            $table->integer('instante');
             $table->timestamps();
         });
     }

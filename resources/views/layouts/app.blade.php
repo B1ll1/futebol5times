@@ -20,7 +20,6 @@
         body {
             font-family: 'Lato';
         }
-
         .fa-btn {
             margin-right: 6px;
         }
@@ -50,7 +49,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('selecaojogo') }}"><b style="color: white;">Acompanhamento</b></a></li>
+                    <li><a href="{{ route('real_time.index') }}"><b style="color: white;">Acompanhamento</b></a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -60,7 +59,7 @@
                         <li><a href="{{ url('/login') }}"><b style="color: white;">Login</b></a></li>
                     @else
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a style="color: white;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 

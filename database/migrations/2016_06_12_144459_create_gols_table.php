@@ -23,7 +23,7 @@ class CreateGolsTable extends Migration
             $table->integer('equipe_id')->unsigned()->index();
             $table->foreign('equipe_id')
                  ->references('id')->on('equipes');
-            $table->timestamp('instante');
+            $table->integer('instante');
             $table->timestamps();
         });
     }

@@ -23,9 +23,30 @@ class RealTimeController extends Controller
      */
     public function index()
     {
+        return view('tempo_real.partidas', compact('sumulas'));
+    }
+
+    public function listarJogos()
+    {
+        $arraySumulas = [];
+        $arrayCasa = [];
+        $arrayVisitante = [];
         $sumulas = Sumula::whereNull('ganhador_id')->get();
 
-        return view('tempo_real.partidas', compact('sumulas'));
+        foreach ($sumulas as $key => $sumula) {
+            if(!$sumula->escalacao->isEmpty()) {
+                array_push($arraySumulas, $sumula);
+                array_push($arrayCasa, $sumula->equipeCasa);
+                array_push($arrayVisitante, $sumula->equipeVisitante);
+            }
+        }
+
+        return response()->json([
+            'status' => 'success',
+            'sumulas' => $arraySumulas,
+            'casa' => $arrayCasa,
+            'visitante' => $arrayVisitante
+        ]);
     }
 
     public function live($sumulaId)
@@ -86,7 +107,7 @@ class RealTimeController extends Controller
             'sumula_id' => $sumulaId,
             'jogador_id' => $inputs['jogador_id'],
             'equipe_id' =>  $jogador->equipe->id,
-            'instante' => Carbon::now()
+            'instante' => $inputs['instante']
         ]);
         $gol->save();
 
@@ -110,7 +131,7 @@ class RealTimeController extends Controller
         $cartao = new Cartao([
             'sumula_id' => $sumulaId,
             'jogador_id' => $inputs['jogador_id'],
-            'instante' => Carbon::now(),
+            'instante' => $inputs['instante'],
             'tipo' => $request['tipo']
         ]);
         $cartao->save();
@@ -190,7 +211,7 @@ class RealTimeController extends Controller
             'sumula_id' => $sumulaId,
             'jogador_id_sai' => $inputs['jogador_id_sai'],
             'jogador_id_entra' => $inputs['jogador_id_entra'],
-            'instante' => Carbon::now()
+            'instante' => $inputs['instante']
         ]);
 
         if($substituicao) {

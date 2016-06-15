@@ -15,10 +15,7 @@ class Substituicao extends Model
     protected $fillable = [
         'sumula_id',
         'jogador_id_sai',
-        'jogador_id_entra'
-    ];
-
-    protected $dates = [
-        'instante',
+        'jogador_id_entra',
+        'instante'
     ];
 }
