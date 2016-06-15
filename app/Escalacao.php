@@ -15,7 +15,8 @@ class Escalacao extends Model
     protected $fillable = [
         'sumula_id',
         'jogador_id',
-        'equipe_id'
+        'equipe_id',
+        'estado'
     ];
 
     public function jogador()
