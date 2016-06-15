@@ -20,7 +20,7 @@ class CreateCartoesTable extends Migration
             $table->integer('jogador_id')->unsigned()->index();
             $table->foreign('jogador_id')
                  ->references('id')->on('jogadores');
-            $table->timestamp('instante');
+            $table->integer('instante');
             $table->string('tipo');
             $table->timestamps();
         });
