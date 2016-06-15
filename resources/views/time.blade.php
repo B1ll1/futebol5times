@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 @foreach($classificacao_ordenada as $key=>$obj)
                 @unless($classificacao[$id]['nome']!=$obj['nome'])
-                <div class="panel-heading" style="background-color: #707070 ; color: black;"><h4>{{$obj['nome']}}  <img src="http://futebol.trabalho/images/{{strtolower($obj['nome'])}}.png"></h4></div>
+                <div class="panel-heading" style="background-color: #707070 ; color: black;"><h4>{{$obj['nome']}}  <img src="http://dev.futebol.com/images/{{strtolower($obj['nome'])}}.png"></h4></div>
                 @endunless
                 @endforeach
                 <div class="panel-body">
@@ -16,7 +16,6 @@
                              <div class="col-md-12">
                                 <div class="panel panel-default">
                                 <div class="panel-heading" style="background-color: #A0A0A0; color: black;"><b>Tabela</b></div>
-                                <div class="panel-body">
                                 <table class="table table-hover" id="classificacao">
                                         <thead>
                                             <tr>
@@ -49,7 +48,6 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -57,8 +55,7 @@
                     <div class="row">
                              <div class="col-md-12">
                                 <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <table id="rodada" class="table table-hover display" cellspacing="0" width="100%">
+                                    <table id="rodada" class="table table-striped table-hover display" cellspacing="0" width="100%">
                                          <thead>
                                                 <tr>
                                                     <th style="text-align: center;">Últimos Jogos</th>
@@ -75,15 +72,13 @@
                                              @endforeach
                                             </tbody>
                                     </table>
-                                </div>
                             </div>
                         </div>
                     </div>
                      <div class="row">
                              <div class="col-md-12">
                                 <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <table id="rodada" class="table table-hover display" cellspacing="0" width="100%">
+                                    <table id="rodada" class="table table-striped table-hover display" cellspacing="0" width="100%">
                                          <thead>
                                                 <tr>
                                                     <th style="text-align: center;">Próximos Jogos</th>
@@ -100,7 +95,6 @@
                                              @endforeach
                                             </tbody>
                                     </table>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,8 +102,7 @@
                              <div class="col-md-12">
                                 <div class="panel panel-default">
                                 <div class="panel-heading" style="background-color: #A0A0A0; color: black;"><b>Jogadores</b></div>
-                                <div class="panel-body">
-                                    <table id="rodada" class="table table-hover display" cellspacing="0" width="100%">
+                                    <table id="rodada" class="table table-striped table-hover display" cellspacing="0" width="100%">
                                          <thead>
                                                 <tr>
                                                     <th style="text-align: left;">Jogador</th>
@@ -141,7 +134,6 @@
                                              @endforeach
                                             </tbody>
                                     </table>
-                                </div>
                             </div>
                         </div>
                     </div>

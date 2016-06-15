@@ -23,8 +23,9 @@ class RealTimeController extends Controller
      */
     public function index()
     {
+        $sumulas = Sumula::whereNull('ganhador_id')->get();
 
-        return view('tempo_real.partida');
+        return view('tempo_real.partidas', compact('sumulas'));
     }
 
     public function live($sumulaId)

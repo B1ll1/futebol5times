@@ -41,4 +41,9 @@ class Sumula extends Model
         return $this->hasOne(Jogo::class);
     }
 
+    public function escalacao()
+    {
+        return $this->hasMany(Escalacao::class);
+    }
+
 }
