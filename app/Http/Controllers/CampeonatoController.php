@@ -24,7 +24,7 @@ class CampeonatoController extends Controller
     public function index($id=null)
     {
         //arrays que serao utilizados
-        $classificacao = [1 => ['nome'=>'Internacional','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0], 2 => ['nome'=>'América-MG','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0], 3 => ['nome'=>'Cruzeiro','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0], 4 => ['nome'=>'Atlético-PR','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0], 5 => ['nome'=>'São Paulo','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0]];
+        $classificacao = [1 => ['nome'=>'Internacional','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0], 2 => ['nome'=>'Chapecoense','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0], 3 => ['nome'=>'São Paulo','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0], 4 => ['nome'=>'Sport','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0], 5 => ['nome'=>'Santos','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0],  6 => ['nome'=>'Atlético-PR','pontos'=>0,'jogos'=>0,'vitorias'=>0, 'empates'=>0, 'derrotas'=>0, 'gp'=>0, 'gc'=>0, 'sg'=>0]];
         $golsporjogo = [1 =>[1=>0,2=>0],2 =>[3=>0,4=>0],3 =>[1=>0,5=>0],4 =>[3=>0,2=>0],5 =>[1=>0,3=>0],6 =>[4=>0,5=>0],7 =>[1=>0,4=>0],8 =>[2=>0,5=>0],9 =>[2=>0,4=>0],10 =>[3=>0,5=>0],11 =>[2=>0,1=>0],12 =>[4=>0,3=>0],13 =>[5=>0,1=>0],14 =>[2=>0,3=>0],15 =>[3=>0,1=>0],16 =>[5=>0,4=>0],17 =>[4=>0,1=>0],18 =>[5=>0,2=>0],19 =>[4=>0,2=>0],20 =>[5=>0,3=>0]];
         $ultimosjogos = [];
         $proximosjogos = [];
@@ -125,8 +125,6 @@ class CampeonatoController extends Controller
         $gols = DB::table('gols')->select('jogador_id', DB::raw('count(jogador_id) as total'))->groupBy('jogador_id')->orderBy('total','desc')->lists('total','jogador_id');
         //retorna todos os jogadores
         $jogadores = DB::table('jogadores')->select(['jogadores.id as id', 'jogadores.nome as nome', 'jogadores.equipe_id as equipeid'])->get();
-        //retorna todos os jogos com os campos
-        // $jogos = Jogo::join('campos', 'jogos.campo_id','=', 'campos.id')->join('equipe_jogos', 'jogos.id', '=', 'equipe_jogos.jogo_id')->get();
         $jogos = Jogo::all();
         $campos = Campo::all();
         if(isset($id)){

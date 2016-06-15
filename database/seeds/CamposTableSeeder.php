@@ -13,11 +13,11 @@ class CamposTableSeeder extends Seeder
     public function run()
     {
         $campos =array(
-            array('nome' => 'Estádio Beira-Rio', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('nome' => 'Estádio Independência', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('nome' => 'Estádio Mineirão', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('nome' => 'Estádio Joaquim Américo Guimarães', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('nome' => 'Estádio do Morumbi', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('nome' => 'Beira-Rio', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('nome' => 'Arena Conda', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('nome' => 'Morumbi', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('nome' => 'Ilha do Retiro', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('nome' => 'Vila Belmiro', 'dimensoes' => '105 x 68 m', 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
         );
         Campo::insert($campos);
     }

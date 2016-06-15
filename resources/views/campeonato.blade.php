@@ -49,7 +49,8 @@
                     </table>
             </div>
         </div>
-        <div class="col-md-5">
+
+      <div class="col-md-5">
             <div class="panel panel-default">
             <table id="rodada" class="table table-hover display" cellspacing="0" width="100%">
                      <thead>
@@ -79,7 +80,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading" style="background-color: green; color: white; font-size: 1.5em;"><b>Artilharia</b></div>
                      <table class="table table-hover" id="artilharia">

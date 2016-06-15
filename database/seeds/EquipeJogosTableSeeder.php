@@ -12,10 +12,10 @@ class EquipeJogosTableSeeder extends Seeder
     public function run()
     {
         $sumula =array(
-            array('campo_id' => 1,  'equipe_id_casa' => 1, 'equipe_id_visitante' => 2, 'jogo_id' => 1, 'ganhador_id' => 2, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 3,  'equipe_id_casa' => 3, 'equipe_id_visitante' => 4, 'jogo_id' => 2, 'ganhador_id' => 3, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 1,  'equipe_id_casa' => 1, 'equipe_id_visitante' => 5, 'jogo_id' => 3, 'ganhador_id' => 0, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
-            array('campo_id' => 3,  'equipe_id_casa' => 3, 'equipe_id_visitante' => 2, 'jogo_id' => 4, 'ganhador_id' => 0, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('campo_id' => 1,  'equipe_id_casa' => 1, 'equipe_id_visitante' => 2, 'jogo_id' => 1, 'ganhador_id' => null, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('campo_id' => 3,  'equipe_id_casa' => 3, 'equipe_id_visitante' => 4, 'jogo_id' => 2, 'ganhador_id' => null, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('campo_id' => 1,  'equipe_id_casa' => 1, 'equipe_id_visitante' => 5, 'jogo_id' => 3, 'ganhador_id' => null, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
+            array('campo_id' => 3,  'equipe_id_casa' => 3, 'equipe_id_visitante' => 2, 'jogo_id' => 4, 'ganhador_id' => null, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('campo_id' => 1,  'equipe_id_casa' => 1, 'equipe_id_visitante' => 3, 'jogo_id' => 5, 'ganhador_id' => null, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('campo_id' => 4,  'equipe_id_casa' => 4, 'equipe_id_visitante' => 5, 'jogo_id' => 6, 'ganhador_id' => null, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
             array('campo_id' => 1,  'equipe_id_casa' => 1, 'equipe_id_visitante' => 4, 'jogo_id' => 7, 'ganhador_id' => null, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' => \Carbon\Carbon::now()->toDateTimeString()),
