@@ -20,6 +20,9 @@ class CreateEscalacaoTable extends Migration
             $table->integer('jogador_id')->unsigned()->index();
             $table->foreign('jogador_id')
                  ->references('id')->on('jogadores');
+            $table->integer('equipe_id')->unsigned()->index();
+            $table->foreign('equipe_id')
+                 ->references('id')->on('equipes');
             $table->timestamps();
         });
     }

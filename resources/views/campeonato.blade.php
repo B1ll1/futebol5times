@@ -86,9 +86,20 @@
                         <thead>
                             @foreach($gols as $key => $gol)
                             <tr>
-                                <th>{{$jogadores[$key]->nome}} <img src="http://futebol.trabalho/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png"> {{$gol}}</th>
+                                <th>
+                                    <div class="col-md-3">
+                                        <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png">
+                                    </div>
+                                    <div class="col-md-5">
+                                        {{$jogadores[$key]->nome}}
+                                    </div>
+                                    <div class="col-md-2">
+                                        {{$gol}}
+                                    </div>
+                                </th>
+
                             </tr>
-                           @endforeach()
+                           @endforeach
                         </thead>
                     </table>
             </div>
