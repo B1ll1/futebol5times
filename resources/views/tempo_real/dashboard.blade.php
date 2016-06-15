@@ -301,14 +301,14 @@
                 spanTime1.empty();
                 spanTime1.append(`
                     <img src="http://dev.futebol.com/images/${(data.casa.nome).toLowerCase()}.png"/>
-                    <h3>${data.casa.nome}</h3>
+                    <h3 id="equipeTime1" data-equipe-id="${data.casa.id}">${data.casa.nome}</h3>
                 `);
 
                 // Faz um append do escudo e nome do time visitante
                 spanTime2.empty();
                 spanTime2.append(`
                     <img src="http://dev.futebol.com/images/${data.visitante.nome.toLowerCase()}.png"/>
-                    <h3>${data.visitante.nome}</h3>
+                    <h3 id="equipeTime2" data-equipe-id="${data.visitante.id}">${data.visitante.nome}</h3>
                 `);
             }
         });
@@ -333,6 +333,8 @@
         })
         .done(function(data) {
             if(data.status == 'success') {
+                console.log(data.jogadoresCasa);
+                console.log(data.reservasCasa);
                 // Popula com os jogadores da casa
                 for(var i = 0; i < data.jogadoresCasa.length; i++) {
                     $('#selectTime1Jogadores').append(`
@@ -530,6 +532,7 @@
         e.preventDefault();
         var dados = $(this).serializeArray();
         var sumula_id = $('#panelTime1').data('sumula-id');
+        var equipe_id = $('#equipeTime1').data('equipe-id');
 
         $.ajax({
             headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
@@ -537,12 +540,40 @@
             url: '/tempo-real/partida/'+ sumula_id +'/substituicao',
             data: {
                 dados: dados,
+                equipe_id: equipe_id
             },
             dataType: 'json'
         })
         .done(function(data) {
             if(data.status == 'success') {
+                console.log(data.jogadores);
+                console.log(data.reservas);
                 $('#btnSalvaSubstituicao1').prop('disabled', true);
+
+                $('#selectTime1Jogadores').empty();
+                $('#selectTime1JogadoresAmarelo').empty();
+                $('#selectTime1JogadoresVermelho').empty();
+                $('#selectTime1Atual').empty();
+
+                for(var i = 0; i < data.jogadores.length; i++) {
+                    $('#selectTime1Jogadores').append(`
+                        <option value="${data.jogadores[i].id}">${data.jogadores[i].nome}</option>`);
+
+                    $('#selectTime1JogadoresAmarelo').append(`
+                            <option value="${data.jogadores[i].id}">${data.jogadores[i].nome}</option>`);
+
+                    $('#selectTime1JogadoresVermelho').append(`
+                            <option value="${data.jogadores[i].id}">${data.jogadores[i].nome}</option>`);
+
+                    $('#selectTime1Atual').append(`
+                        <option value="${data.jogadores[i].id}">${data.jogadores[i].nome}</option>`);
+                }
+
+                $('#selectTime1Subs').empty();
+                for(var i = 0; i < data.reservas.length; i++) {
+                    $('#selectTime1Subs').append(`
+                    <option value="${data.reservas[i].id}">${data.reservas[i].nome}</option>`);
+                }
             }
         });
     });
@@ -551,6 +582,7 @@
         e.preventDefault();
         var dados = $(this).serializeArray();
         var sumula_id = $('#panelTime2').data('sumula-id');
+        var equipe_id = $('#equipeTime2').data('equipe-id');
 
         $.ajax({
             headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
@@ -558,12 +590,40 @@
             url: '/tempo-real/partida/'+ sumula_id +'/substituicao',
             data: {
                 dados: dados,
+                equipe_id: equipe_id
             },
             dataType: 'json'
         })
         .done(function(data) {
             if(data.status == 'success') {
+                console.log(data.jogadores);
+                console.log(data.reservas);
                 $('#btnSalvaSubstituicao2').prop('disabled', true);
+
+                $('#selectTime2Jogadores').empty();
+                $('#selectTime2JogadoresAmarelo').empty();
+                $('#selectTime2JogadoresVermelho').empty();
+                $('#selectTime2Atual').empty();
+
+                for(var i = 11  ; i <= 21; i++) {
+                    $('#selectTime2Jogadores').append(`
+                        <option value="${data.jogadores[i].id}">${data.jogadores[i].nome}</option>`);
+
+                    $('#selectTime2JogadoresAmarelo').append(`
+                            <option value="${data.jogadores[i].id}">${data.jogadores[i].nome}</option>`);
+
+                    $('#selectTime2JogadoresVermelho').append(`
+                            <option value="${data.jogadores[i].id}">${data.jogadores[i].nome}</option>`);
+
+                    $('#selectTime2Atual').append(`
+                        <option value="${data.jogadores[i].id}">${data.jogadores[i].nome}</option>`);
+                }
+
+                $('#selectTime2Subs').empty();
+                for(var i = 0; i < data.reservas.length; i++) {
+                    $('#selectTime2Subs').append(`
+                    <option value="${data.reservas[i].id}">${data.reservas[i].nome}</option>`);
+                }
             }
         });
     });

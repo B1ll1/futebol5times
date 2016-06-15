@@ -147,21 +147,27 @@ class RealTimeController extends Controller
     public function postEscalacao(Request $request, $sumulaId)
     {
         $sumula = Sumula::findOrFail($sumulaId);
-        $casa = Equipe::findOrFail($sumula->equipe_id_casa);
-        $visitante = Equipe::findOrFail($sumula->equipe_id_visitante);
+        $equipeCasa = Equipe::findOrFail($sumula->equipe_id_casa);
+        $equipeVisitante = Equipe::findOrFail($sumula->equipe_id_visitante);
 
         $reservasCasa = [];
         $reservasVisitante = [];
 
-        foreach ($casa->jogadores as $key => $jogador) {
+        foreach ($equipeCasa->jogadores as $key => $jogador) {
             if($key > 10) {
-                array_push($reservasCasa, $jogador);
+                Escalacao::create([
+                    'sumula_id' => $sumulaId,
+                    'jogador_id' => $jogador->id,
+                    'equipe_id' => $jogador->equipe->id,
+                    'estado' => 0
+                ]);
             }
             else {
                 $escalacao = Escalacao::create([
                     'sumula_id' => $sumulaId,
                     'jogador_id' => $jogador->id,
-                    'equipe_id' => $jogador->equipe->id
+                    'equipe_id' => $jogador->equipe->id,
+                    'estado' => 1
                 ]);
                 if($key<1){
                     Posicao::create([
@@ -195,18 +201,28 @@ class RealTimeController extends Controller
         }
 
         $jogadoresCasa = Escalacao::join('jogadores', 'jogadores.id', '=', 'escalacao.jogador_id')
-            ->where('escalacao.equipe_id', $casa->jogadores()->first()->equipe->id)
-            ->select('jogadores.*')->get();
+            ->where('escalacao.equipe_id', $equipeCasa->id)->where('sumula_id', $sumulaId)
+            ->where('estado', 1)->select('jogadores.*')->get();
 
-        foreach ($visitante->jogadores as $key => $jogador) {
+        $reservasCasa = Escalacao::join('jogadores', 'jogadores.id', '=', 'escalacao.jogador_id')
+            ->where('escalacao.equipe_id', $equipeCasa->id)->where('sumula_id', $sumulaId)
+            ->where('estado', 0)->select('jogadores.*')->get();
+
+        foreach ($equipeVisitante->jogadores as $key => $jogador) {
             if($key > 10) {
-                array_push($reservasVisitante, $jogador);
+                Escalacao::create([
+                    'sumula_id' => $sumulaId,
+                    'jogador_id' => $jogador->id,
+                    'equipe_id' => $jogador->equipe->id,
+                    'estado' => 0
+                ]);
             }
             else {
                 $escalacao = Escalacao::create([
                     'sumula_id' => $sumulaId,
                     'jogador_id' => $jogador->id,
-                    'equipe_id' => $jogador->equipe->id
+                    'equipe_id' => $jogador->equipe->id,
+                    'estado' => 1
                 ]);
                 if($key<1){
                     Posicao::create([
@@ -239,8 +255,12 @@ class RealTimeController extends Controller
             }
         }
         $jogadoresVisitante = Escalacao::join('jogadores', 'jogadores.id', '=', 'escalacao.jogador_id')
-            ->where('escalacao.equipe_id', $visitante->jogadores()->first()->equipe->id)
-            ->select('jogadores.*')->get();
+            ->where('escalacao.equipe_id', $equipeVisitante->id)->where('sumula_id', $sumulaId)
+            ->where('estado', 1)->select('jogadores.*')->get();
+
+        $reservasVisitante = Escalacao::join('jogadores', 'jogadores.id', '=', 'escalacao.jogador_id')
+            ->where('escalacao.equipe_id', $equipeVisitante->id)->where('sumula_id', $sumulaId)
+            ->where('estado', 0)->select('jogadores.*')->get();
 
         if($jogadoresCasa && $jogadoresVisitante) {
             return response()->json([
@@ -265,6 +285,7 @@ class RealTimeController extends Controller
             $inputs[$data['name']] = $data['value'];
         }
 
+        $sumula = Sumula::findOrFail($sumulaId);
         $substituicao = Substituicao::create([
             'sumula_id' => $sumulaId,
             'jogador_id_sai' => $inputs['jogador_id_sai'],
@@ -272,8 +293,29 @@ class RealTimeController extends Controller
             'instante' => $inputs['instante']
         ]);
 
+        $saindo = Escalacao::where('sumula_id', $sumulaId)
+            ->where('jogador_id', $inputs['jogador_id_sai'])->first();
+        $saindo->estado = 0;
+        $saindo->save();
+
+        $entrando = Escalacao::where('sumula_id', $sumulaId)
+            ->where('jogador_id', $inputs['jogador_id_entra'])->first();
+        $entrando->estado = 1;
+        $entrando->save();
+
+        $jogadores = Escalacao::join('jogadores', 'jogadores.id', '=', 'escalacao.jogador_id')
+            ->where('escalacao.equipe_id', $request['equipe_id'])->where('sumula_id', $sumulaId)
+            ->where('estado', 1)->select('jogadores.*')->get();
+
+        $reservas = Escalacao::join('jogadores', 'jogadores.id', '=', 'escalacao.jogador_id')
+            ->where('escalacao.equipe_id', $request['equipe_id'])->where('sumula_id', $sumulaId)
+            ->where('estado', 0)->select('jogadores.*')->where('jogadores.id', '<>', $inputs['jogador_id_sai'])->get();
+
         if($substituicao) {
-            return response()->json(['status' => 'success']);
+            return response()->json(['status' => 'success',
+                'jogadores' => $jogadores,
+                'reservas' => $reservas,
+            ]);
         }
         else {
             return response()->json(['status' => 'fail']);

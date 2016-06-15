@@ -58,6 +58,7 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}"><b style="color: white;">Login</b></a></li>
                     @else
+                        <li><a href="{{ route('real_time.dashboard') }}">Narrar Jogo</a></li>
                         <li class="dropdown">
                             <a style="color: white;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
