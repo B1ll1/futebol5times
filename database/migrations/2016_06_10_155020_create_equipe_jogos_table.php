@@ -25,6 +25,7 @@ class CreateEquipeJogosTable extends Migration
             $table->foreign('jogo_id')
                  ->references('id')->on('jogos');
             $table->integer('ganhador_id')->nullable();
+            $table->boolean('tipo')->nullable();
             $table->timestamps();
         });
     }

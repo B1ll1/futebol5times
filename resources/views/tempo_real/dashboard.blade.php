@@ -12,7 +12,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background: green; color: white; font-size: 1.5em;">Qual partida deseja narrar?</div>
                     <div class="panel-body">
-                        <div class="col-md-10">
+                        <div class="col-md-6">
                             <select id="sumulaSelect" class="form-control" name="sumulaSelect">
                                 <option value=""></option>
                                 @foreach($sumulas as $sumula)
@@ -24,7 +24,10 @@
                         </div>
 
                         <div class="col-md-2">
-                            <button id="btnIniciarPartida" class="btn btn-sm btn-success">Iniciar Partida</button>
+                            <button id="btnIniciarPartida" class="btn btn-sm btn-success">Partida Ao Vivo</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button id="btnIniciarPartidaOff" class="btn btn-sm btn-success">Cadastrar Lances Importantes</button>
                         </div>
                     </div>
                 </div>
@@ -58,7 +61,7 @@
                                     {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
                                 </div>
                                 <div class="col-md-3">
-                                    <button id="btnSalvaGol1" type="submit" class="btn btn-sm btn-success">Registrar</button>
+                                    <button id="btnSalvaGol1" type="submit" class="btn btn-sm btn-success"><i class="fa fa-futbol-o"></i> Registrar</button>
                                 </div>
                             {!! Form::close() !!}
                         </div>
@@ -153,7 +156,7 @@
                                     {!! Form::number('instante', null, ['class' => 'form-control', 'placeholder' => 'Tempo']) !!}
                                 </div>
                             <div class="col-md-3">
-                                <button id="btnSalvaGol2" type="submit" class="btn btn-sm btn-success">Registrar</button>
+                                <button id="btnSalvaGol2" type="submit" class="btn btn-sm btn-success"><i class="fa fa-futbol-o"></i> Registrar</button>
                             </div>
                             {!! Form::close() !!}
                       </div>
@@ -267,7 +270,8 @@
             $('#btnSalvaSubstituicao2').prop('disabled', false);
         });
 
-        $('#btnIniciarPartida').prop('disabled', true); // Desativa o botão iniciar partida
+        $('#btnIniciarPartidaOff').prop('disabled', true); // Desativa o botão cadastrar lances
+        $('#btnIniciarPartida').prop('disabled', true); // Desativa o botão partida ao vivo
         $('#btnSalvaGol1').prop('disabled', true);
         $('#btnSalvaGol2').prop('disabled', true);
         $('#btnSalvaAmarelo1').prop('disabled', true);
@@ -281,6 +285,7 @@
     // Função para pegar os dados da sumula escolhida no select
     $('#sumulaSelect').on('change', function() {
         $('#btnIniciarPartida').prop('disabled', false); // Libera o botão iniciar partida
+        $('#btnIniciarPartidaOff').prop('disabled', false); // Libera o botão iniciar partida
         var sumula_id = $(this).val();
         $('#btnIniciarPartida').data('sumula-id', sumula_id);
         $('#panelTime1').data('sumula-id', sumula_id);
@@ -329,6 +334,76 @@
                 headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
                 method: 'POST',
                 url: '/tempo-real/partida/'+ sumula_id + '/escalacao',
+                data: {
+                    tipo: 1,
+                },
+                dataType: 'json',
+        })
+        .done(function(data) {
+            if(data.status == 'success') {
+                // Popula com os jogadores da casa
+                for(var i = 0; i < data.jogadoresCasa.length; i++) {
+                    $('#selectTime1Jogadores').append(`
+                        <option value="${data.jogadoresCasa[i].id}">${data.jogadoresCasa[i].nome}</option>`);
+
+                    $('#selectTime1JogadoresAmarelo').append(`
+                        <option value="${data.jogadoresCasa[i].id}">${data.jogadoresCasa[i].nome}</option>`);
+
+                    $('#selectTime1JogadoresVermelho').append(`
+                        <option value="${data.jogadoresCasa[i].id}">${data.jogadoresCasa[i].nome}</option>`);
+
+                    $('#selectTime1Atual').append(`
+                        <option value="${data.jogadoresCasa[i].id}">${data.jogadoresCasa[i].nome}</option>`);
+                }
+
+                // Popula com os reservas da casa
+                for(var i = 0; i < data.reservasCasa.length; i++) {
+                    $('#selectTime1Subs').append(`
+                            <option value="${data.reservasCasa[i].id}">${data.reservasCasa[i].nome}</option>`);
+                }
+
+                // Popula com os jogadores do visitante
+                for(var i = 0; i < data.jogadoresVisitante.length; i++) {
+                    $('#selectTime2Jogadores').append(`
+                        <option value="${data.jogadoresVisitante[i].id}">${data.jogadoresVisitante[i].nome}</option>`);
+
+                    $('#selectTime2JogadoresAmarelo').append(`
+                        <option value="${data.jogadoresVisitante[i].id}">${data.jogadoresVisitante[i].nome}</option>`);
+
+                    $('#selectTime2JogadoresVermelho').append(`
+                        <option value="${data.jogadoresVisitante[i].id}">${data.jogadoresVisitante[i].nome}</option>`);
+
+                    $('#selectTime2Atual').append(`
+                        <option value="${data.jogadoresVisitante[i].id}">${data.jogadoresVisitante[i].nome}</option>`);
+                }
+
+                // Popula com os reservas do visitante
+                for(var i = 0; i < data.reservasVisitante.length; i++) {
+                    $('#selectTime2Subs').append(`
+                            <option value="${data.reservasVisitante[i].id}">${data.reservasVisitante[i].nome}</option>`);
+                }
+            }
+        });
+    });
+
+     // Inicia a partida mas não exibe no ao vivo
+    $('#btnIniciarPartidaOff').on('click', function() {
+            $('#container').append(`
+                    <div class="row text-center">
+                        <button id="btnEncerrarPartida" class="btn btn-lg btn-success">Encerrar Partida</button>
+                    </div>
+            `);
+
+            var sumula_id = $(this).data('sumula-id');
+            $(this).parent().parent().parent().remove();
+
+            $.ajax({
+                headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+                method: 'POST',
+                url: '/tempo-real/partida/'+ sumula_id + '/escalacao',
+                data: {
+                    tipo: 0,
+                },
                 dataType: 'json',
         })
         .done(function(data) {
