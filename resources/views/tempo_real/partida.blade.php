@@ -121,17 +121,17 @@
                      var cartoes = data.cartoes;
                      var tamanhocartoes = cartoes.length;
                      if(tamanhocartoes>auxcartoes){
-                            $('#timelinecartoes').append(`<p>${data.cartoes[auxcartoes].nome} - ${data.cartoes[auxcartoes].instante} - ${data.cartoes[auxcartoes].tipo} </p>`);
+                            $('#timelinecartoes').append(`<p>O jogador ${data.cartoes[auxcartoes].nome} levou um cartão ${data.cartoes[auxcartoes].tipo} aos ${data.cartoes[auxcartoes].instante} minutos.</p>`);
                             auxcartoes+=1;
                      }
                      var tamanhogols = golsaux.length;
                      if(tamanhogols>auxgols){
-                            $('#timelinegols').append(`<p> GOL  do ${golsaux[auxgols].nome} - ${golsaux[auxgols].instante}</p>`);
+                            $('#timelinegols').append(`<p> GOOOOOL  do ${golsaux[auxgols].nome} aos ${golsaux[auxgols].instante} minutos.</p>`);
                             auxgols+=1;
                      }
                      var tamanhosubs = data.subs.length;
                      if(tamanhosubs>auxsubs){
-                            $('#timelinesubs').append(`<p> Sai o jogador ${data.jogadores[data.subs[auxsubs].jogador_id_sai-1].nome} e entra o jogador  ${data.jogadores[data.subs[auxsubs].jogador_id_entra-1].nome} - ${data.subs[auxsubs].instante}</p>`);
+                            $('#timelinesubs').append(`<p> Sai o jogador ${data.jogadores[data.subs[auxsubs].jogador_id_sai-1].nome} e entra o jogador  ${data.jogadores[data.subs[auxsubs].jogador_id_entra-1].nome} aos ${data.subs[auxsubs].instante} minutos.</p>`);
                             $('#jog'+data.jogadores[data.subs[auxsubs].jogador_id_sai-1].id).empty();
                             $('#jog'+data.jogadores[data.subs[auxsubs].jogador_id_sai-1].id).text(data.jogadores[data.subs[auxsubs].jogador_id_entra-1].nome);
                             auxsubs+=1;
@@ -141,6 +141,6 @@
                      $('#jogador'+data.jogadores[data.subs[auxsubs-1].jogador_id_sai-1].id).attr('id', 'jogador'+data.jogadores[data.subs[auxsubs-1].jogador_id_entra-1].id);
                 }
             });
-        }, 3000);
+        }, 500);
 </script>
 @stop

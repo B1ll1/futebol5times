@@ -64,7 +64,7 @@
                                 <th style="text-align: center;">QUA - {{$jogos[$rodada->id-1]->data->format('d/m/y H:i')}} <-> {{$campos[$rodada->campo_id-1]->nome}}</th>
                              </tr>
                              <tr>
-                                <th style="text-align: center;">{{$classificacao[$rodada->casaid]['nome']}} <a href="{{route('index',[$rodada->casaid])}}"><img src="http://dev.futebol.com/images/{{strtolower($classificacao[$rodada->casaid]['nome'])}}.png"></a> {{$golsporjogo[$rodada->id][$rodada->casaid]}} X {{$golsporjogo[$rodada->id][$rodada->visitanteid]}} <a href="{{route('index',[$rodada->visitanteid])}}"><img src="http://dev.futebol.com/images/{{strtolower($classificacao[$rodada->visitanteid]['nome'])}}.png"></a> {{$classificacao[$rodada->visitanteid]['nome']}}</th>
+                                <th style="text-align: center;"><a href="{{ route('real_time.notlive', $jogos[$rodada->id-1])}}">{{$classificacao[$rodada->casaid]['nome']}} <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$rodada->casaid]['nome'])}}.png"> {{$golsporjogo[$rodada->id][$rodada->casaid]}} X {{$golsporjogo[$rodada->id][$rodada->visitanteid]}} <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$rodada->visitanteid]['nome'])}}.png"> {{$classificacao[$rodada->visitanteid]['nome']}}</a></th>
                              </tr>
                          @endforeach
 

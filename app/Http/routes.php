@@ -25,6 +25,7 @@ Route::group(['prefix' => 'tempo-real/'], function() {
     Route::get('partidas/listar', ['as' => 'real_time.listarJogos', 'uses' => 'RealTimeController@listarJogos']);
     Route::get('partida/{sumula_id}', ['as' => 'real_time.getJogo', 'uses' => 'RealTimeController@getJogo']);
     Route::get('partida/{sumula_id}/ao-vivo', ['as' => 'real_time.live', 'uses' => 'RealTimeController@live']);
+    Route::get('partida/{sumula_id}/lances-importantes', ['as' => 'real_time.notlive', 'uses' => 'RealTimeController@live']);
     Route::get('partida/{sumula_id}/encerrar', ['as' => 'real_time.finishGame', 'uses' => 'RealTimeController@finishGame']);
     Route::post('partida/{sumula_id}/gol', ['as' => 'real_time.postGol', 'uses' => 'RealTimeController@postGol']);
     Route::post('partida/{sumula_id}/cartao', ['as' => 'real_time.postCartao', 'uses' => 'RealTimeController@postCartao']);

@@ -32,7 +32,8 @@ class RealTimeController extends Controller
         $arraySumulas = [];
         $arrayCasa = [];
         $arrayVisitante = [];
-        $sumulas = Sumula::whereNull('ganhador_id')->get();
+        $sumulas = Sumula::whereNull('ganhador_id')
+                                        ->where('tipo', 1)->get();
 
         foreach ($sumulas as $key => $sumula) {
             if(!$sumula->escalacao->isEmpty()) {
@@ -149,6 +150,9 @@ class RealTimeController extends Controller
         $sumula = Sumula::findOrFail($sumulaId);
         $equipeCasa = Equipe::findOrFail($sumula->equipe_id_casa);
         $equipeVisitante = Equipe::findOrFail($sumula->equipe_id_visitante);
+
+        $sumula->tipo = $request['tipo'];
+        $sumula->update();
 
         $reservasCasa = [];
         $reservasVisitante = [];
