@@ -17,7 +17,7 @@ Route::get('/{id?}', ['as' => 'index', 'uses' => 'CampeonatoController@index'])-
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
 //Route::get('/dataclassificacao',['as' => 'data_classificacao', 'uses'=>'CampeonatoController@classificacaoData']);
 
 Route::group(['prefix' => 'tempo-real/'], function() {

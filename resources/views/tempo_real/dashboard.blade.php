@@ -288,6 +288,7 @@
         $('#btnIniciarPartidaOff').prop('disabled', false); // Libera o botão iniciar partida
         var sumula_id = $(this).val();
         $('#btnIniciarPartida').data('sumula-id', sumula_id);
+        $('#btnIniciarPartidaOff').data('sumula-id', sumula_id);
         $('#panelTime1').data('sumula-id', sumula_id);
         $('#panelTime2').data('sumula-id', sumula_id);
 
@@ -305,14 +306,14 @@
                 // Faz um append do escudo e nome do time da casa
                 spanTime1.empty();
                 spanTime1.append(`
-                    <img src="http://dev.futebol.com/images/${(data.casa.nome).toLowerCase()}.png"/>
+                    <img src="/images/${(data.casa.nome).toLowerCase()}.png"/>
                     <h3 id="equipeTime1" data-equipe-id="${data.casa.id}">${data.casa.nome}</h3>
                 `);
 
                 // Faz um append do escudo e nome do time visitante
                 spanTime2.empty();
                 spanTime2.append(`
-                    <img src="http://dev.futebol.com/images/${data.visitante.nome.toLowerCase()}.png"/>
+                    <img src="/images/${data.visitante.nome.toLowerCase()}.png"/>
                     <h3 id="equipeTime2" data-equipe-id="${data.visitante.id}">${data.visitante.nome}</h3>
                 `);
             }
