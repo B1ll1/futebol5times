@@ -7,9 +7,9 @@
             <div id="placar" style="padding: 10px 0 50px 0;">
                 <div class="text-center">
                     <h2>
-                        <span style="padding-right: 50px;">{{ $sumula->equipeCasa->nome }}</span> <img src="http://dev.futebol.com/images/{{ strtolower($sumula->equipeCasa->nome) }}.png" style="padding-right: 50px;"/>
+                        <span style="padding-right: 50px;">{{ $sumula->equipeCasa->nome }}</span> <img src="/images/{{ strtolower($sumula->equipeCasa->nome) }}.png" style="padding-right: 50px;"/>
                                                 <span style="font-size: 1.7em;" id="casa">0</span> X <span style="font-size: 1.7em;" id="visitante">0</span>
-                        <img src="http://dev.futebol.com/images/{{ strtolower($sumula->equipeVisitante->nome) }}.png" style="padding-left: 50px;"/> <span style="padding-left: 50px;">{{ $sumula->equipeVisitante->nome }}</span>
+                        <img src="/images/{{ strtolower($sumula->equipeVisitante->nome) }}.png" style="padding-left: 50px;"/> <span style="padding-left: 50px;">{{ $sumula->equipeVisitante->nome }}</span>
                     </h2>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center" style="font-size: 1.3em;"> {{ $sumula->equipeCasa->nome }}</th>
-                                        <th class="text-center"><img src="http://dev.futebol.com/images/{{ strtolower($sumula->equipeCasa->nome) }}.png" width="30px;" height="30px;"></th>
+                                        <th class="text-center"><img src="/images/{{ strtolower($sumula->equipeCasa->nome) }}.png" width="30px;" height="30px;"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -68,7 +68,7 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th class="text-center"><img src="http://dev.futebol.com/images/{{ strtolower($sumula->equipeVisitante->nome) }}.png" width="30px;" height="30px;"></th>
+                                        <th class="text-center"><img src="/images/{{ strtolower($sumula->equipeVisitante->nome) }}.png" width="30px;" height="30px;"></th>
                                         <th class="text-center" style="font-size: 1.3em;"> {{ $sumula->equipeVisitante->nome }}</th>
                                     </tr>
                                 </thead>

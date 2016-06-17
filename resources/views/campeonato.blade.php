@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         @foreach($equipes as $equipe)
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('index',[$equipe->id])}}"><img src="http://dev.futebol.com/images/{{strtolower($equipe->nome)}}.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{route('index',[$equipe->id])}}"><img src="/images/{{strtolower($equipe->nome)}}.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         @endforeach
     </div>
     <div class="row">
@@ -64,7 +64,7 @@
                                 <th style="text-align: center;">QUA - {{$jogos[$rodada->id-1]->data->format('d/m/y H:i')}} <-> {{$campos[$rodada->campo_id-1]->nome}}</th>
                              </tr>
                              <tr>
-                                <th style="text-align: center;"><a href="{{ route('real_time.notlive', $jogos[$rodada->id-1])}}">{{$classificacao[$rodada->casaid]['nome']}} <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$rodada->casaid]['nome'])}}.png"> {{$golsporjogo[$rodada->id][$rodada->casaid]}} X {{$golsporjogo[$rodada->id][$rodada->visitanteid]}} <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$rodada->visitanteid]['nome'])}}.png"> {{$classificacao[$rodada->visitanteid]['nome']}}</a></th>
+                                <th style="text-align: center;"><a href="{{ route('real_time.notlive', $jogos[$rodada->id-1])}}">{{$classificacao[$rodada->casaid]['nome']}} <img src="/images/{{strtolower($classificacao[$rodada->casaid]['nome'])}}.png"> {{$golsporjogo[$rodada->id][$rodada->casaid]}} X {{$golsporjogo[$rodada->id][$rodada->visitanteid]}} <img src="/images/{{strtolower($classificacao[$rodada->visitanteid]['nome'])}}.png"> {{$classificacao[$rodada->visitanteid]['nome']}}</a></th>
                              </tr>
                          @endforeach
 
@@ -89,7 +89,7 @@
                             <tr>
                                 <th>
                                     <div class="col-md-3">
-                                        <img src="http://dev.futebol.com/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png">
+                                        <img src="/images/{{strtolower($classificacao[$jogadores[$key]->equipeid]['nome'])}}.png">
                                     </div>
                                     <div class="col-md-5">
                                         {{$jogadores[$key-1]->nome}}
